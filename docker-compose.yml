@@ -1,0 +1,14 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:5.5
+    environment:
+      - MYSQL_ROOT_PASSWORD=pontus
+
+  www:
+    image: overnice
+    build: server/
+    ports:
+      - "8080:80"
+    volumes:
+      - S:\Backup\www:/data/www
